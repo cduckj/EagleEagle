@@ -128,7 +128,8 @@
 	<div>
 
 
-
+fjhgjhgjkhkhkhkjhjk
+수워니 바보
 
 		<%-- <div><a href = "notice?p=${(p==1)?1:p-1}">이전</a></div> 한칸씩 이동 --%>
 
