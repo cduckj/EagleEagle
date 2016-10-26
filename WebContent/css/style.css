@@ -1,0 +1,93 @@
+@CHARSET "UTF-8";
+
+body .hidden {
+	/* 안보이게 하는 두가지 방법 */
+	/* visibility: hidden; */ /* 자리만 차지하고 안보이는거 */
+	display: none; /* 아예 화면에서 안보이는거 */
+}
+
+#header {
+	position: relative;
+	height: 200px;
+	border: 10px solid pink;
+	text-align:center;
+	/* margin-left: auto;
+	margin-right: auto;
+	display: block; */
+}
+
+#header h1 {
+	/* border: 2px solid black; */
+}
+
+#main-menu {
+	/* border: 3px red solid; */
+	display: inline-block;
+	/*overflow : auto;*/
+	font-family: "맑은 고딕";
+	font-weight: bold;
+	font-size: 15px;
+	color: #000;
+}
+
+.clearfix {
+	overflow: auto;
+	zoom: 1;
+}
+
+#main-menu>h1 {
+	display: none;
+}
+
+#main-menu>ul {
+	overflow: auto;
+	list-style: none;
+/* 	border: 3px red solid;*/
+}
+
+#main-menu>ul>li {
+	float: left;
+	background: url("../images/bg-main-menu-vsp.png") no-repeat 92px center;
+	padding-left: 184px;
+	height:30px;
+	
+	
+}
+
+#main-menu>ul>li:first-child{
+	/*  +li 바로 밑동생  +li+li 세번째 밑동생 */
+	/* border: 3px red solid;  */
+	background: none;
+	padding-left:0px;
+}
+
+#main-menu>ul>li:first-child+li+li+li+li{
+	/*  +li 바로 밑동생  +li+li 세번째 밑동생 */
+	/* border: 3px red solid;  */
+
+	background: url("../images/profile.png") no-repeat;
+	background-size: 50px;
+	/* padding-left:0px; */
+}
+
+#main-menu a {
+	color: green;
+	text-decoration: none;
+}
+
+#main-menu a:hover {
+	color: pink;
+}
+/* #user{
+	width:50px;
+	height:50px;
+} */
+
+
+
+
+
+
+
+
+

@@ -1,6 +1,5 @@
 package web.dao;
 
-import java.sql.SQLException;
 import java.util.List;
 
 import web.entities.Notice;

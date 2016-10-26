@@ -12,6 +12,8 @@
       </environment>
    </environments>
    <mappers>
-      <mapper resource="web/dao/mybatis/BookMarkMapper.xml" />
+      <mapper resource="web/dao/mybatis/notice/NoticeMapper.xml" />
+      <mapper resource="web/dao/mybatis/qna/QnAMapper.xml" />
+      
    </mappers>
 </configuration>
