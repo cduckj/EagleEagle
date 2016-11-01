@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="web.dao.ReviewDao">
+	<!-- <select id="get" resultType="com.web.entities.Notice">
+		select * from notices where
+		code=#{code}
+	</select> -->
+	<select id="getad" resultType="web.model.ReviewModel">
+		select content from review WHERE SORT = '관리자'
+	</select>
+	<select id="getuser" resultType="web.model.ReviewModel">
+		
+		SELECT * FROM(
+	SELECT 
+			ROW_NUMBER() OVER (ORDER BY REGDATE DESC) NUM,WRITER,CONTENT,REGDATE
+	FROM REVIEW WHERE SORT = '회원'
+	)N  WHERE NUM BETWEEN 1+(#{param1}-1)*10 AND #{param1}*10
+	</select>
+	<select id="gethituser" resultType="web.model.ReviewModel">
+		
+		SELECT * FROM(
+	SELECT 
+			ROW_NUMBER() OVER (ORDER BY REGDATE DESC) NUM,WRITER,CONTENT,REGDATE
+	FROM REVIEW WHERE SORT = '회원'
+	)N  WHERE NUM BETWEEN 1 AND 2
+	</select>
+	
+	<!-- <select id="getList" resultType="com.web.model.NoticeModel">
+		SELECT * FROM
+		(
+		SELECT
+		ROW_NUMBER() OVER (ORDER BY REGDATE DESC) NUM,
+		NOTICES_VIEW.*
+		FROM NOTICES_VIEW
+		WHERE ${param2} LIKE '%${param3}%'
+		) N
+		WHERE NUM BETWEEN 1+(#{param1}-1)*10 AND #{param1}*10
+
+	</select>
+	<update id="update" parameterType="com.web.entities.Notice">
+		UPDATE NOTICES SET
+		TITLE=#{title},CONTENT=#{content} WHERE CODE=#{code}
+	</update>
+	<delete id="delete">
+		DELETE NOTICES WHERE CODE=#{code}
+	</delete>
+-->
+	<insert id="insert" parameterType="web.entities.Review">
+		<selectKey order="BEFORE" keyProperty="num" resultType="String">
+			SELECT ISNULL(MAX(CAST(NUM AS INT)), 0)+1 AS NUM FROM REVIEW
+		</selectKey>
+		INSERT INTO REVIEW(CODE,NUM,WRITER,CONTENT,SORT) VALUES
+		(#{code},#{num},#{writer},#{content},#{sort})
+	</insert>  
+	<select id="getCount" resultType="Integer">
+		SELECT COUNT(*) FROM(
+	SELECT 
+			ROW_NUMBER() OVER (ORDER BY REGDATE DESC) NUM FROM REVIEW WHERE SORT = '회원'
+	)N
+	</select> 
+</mapper>

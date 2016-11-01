@@ -1,0 +1,155 @@
+@charset "EUC-KR";
+
+body .hidden {
+	display: none;
+}
+
+body .clearfix {
+	overflow: auto;
+	zoom: 1
+}
+
+body {
+	background: #212121
+}
+
+body .content-container {
+	margin: auto;
+	width: 1400px;
+}
+#body .sort {
+	padding-left: 250px;
+	position: absolute;
+	top:880px;
+}
+#body .sort div {
+	float: left;
+}
+#body .sort div:FIRST-CHILD {
+	float: none;
+	text-align: center;
+	
+}
+
+#body .sort>ul {
+	float: left;
+}
+
+#body .sort a {
+	text-decoration: none;
+	color: white;
+}
+
+#body .img {
+	margin-left: 250px;
+	height: 430px;
+	width: 700px;
+	float: left;
+	display: inline-block;
+}
+
+#body .hitreview {
+	margin-left: 250px;
+	border-top: 1px solid white;
+	height: 450px;
+	width: 700px;
+	float: left;
+	display: inline-block;
+	text-decoration: none;
+}
+
+#body .hitreview > * {
+	padding-left: 60px;
+	
+}
+#body .hitreview li:FIRST-CHILD {
+	font-size: 30px;
+
+	}
+#body .hitreview li:LAST-CHILD {
+	text-align:right;
+	padding-right: 3px;
+	font-size: 16px;
+	display: block;
+}
+
+#body .hitreview li {
+	
+	font-size: 24px;
+}
+#body .hitreview  ul {
+	padding-top: 10px;
+	}
+#body .hitreview>h1 {
+	font-size: 28px;
+	padding-left: 30px;
+}
+
+#body .admin {
+	height: 430px;
+	width: 700px;
+	float: left;
+	display: inline-block;
+}
+
+#body .review {
+	border-top: 1px solid white;
+	border-left: 1px solid white;
+	height: 450px;
+	width: 700px;
+	float: left;
+	display: inline-block;
+	list-style: none;
+}
+#note-form {
+	position: absolute;
+	top:740px;
+	}
+#note-form textarea {
+	width: 500px;
+	height: 200px;
+	border:0px solid white;
+	display: block;
+	float: left;
+	text-indent: 5px;
+	resize:none;
+}
+
+#note-form input[type=submit] {
+	width: 60px;
+	height: 200px;
+	border: 0px;
+	display: block;
+	float: left;
+	background: white;
+}
+/* <-------------level1-----------------> */
+#header {
+	text-align: center;
+	background: #212121
+	color: white;
+}
+
+#header a {
+	float: right;
+	text-decoration: none;
+	color: white;
+}
+
+}
+main {
+	width: calc(100% -205px);
+	float: left;
+}
+
+#body {
+	height: 950px;
+	margin-top: 1px;
+	background: #212121;
+	color: white;
+}
+/* <-------------level4-----------------> */
+#footer {
+	background: #212121;
+	height: 100px;
+}
